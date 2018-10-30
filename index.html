@@ -13,89 +13,156 @@
   <!-- Material Design Bootstrap -->
   <link href="css/mdb.min.css" rel="stylesheet">
   <style type="text/css">
-    html,
-    body,
-    header,
-    .view {
-      height: 100%;
-    }
+   
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+   
+		
+	@font-face {
+    font-family:"CursedTimer";
+    src: url("font/CursedTimerULiL.ttf") /* TTF file for CSS3 browsers */
+}
 
-    @media (max-width: 559px) {
-      html,
-      body,
-      header,
-      .view {
-        height: 1000px;
-      }
-    }
+#countbox {
+    font-family:'CursedTimer', sans-serif;
+    font-size: 100px;
+    color:Lemon Green;
+    text-align: center;
 
-    @media (min-width: 560px) and (max-width: 740px) {
-      html,
-      body,
-      header,
-      .view {
-        height: 700px;
-      }
-    }
+    padding-bottom: 5px;
+    margin-bottom:7px;
+}
 
-    @media (min-width: 800px) and (max-width: 850px) {
-      html,
-      body,
-      header,
-      .view {
-        height: 600px;
-      }
-    }
+#title {
+    font-family:'CursedTimer', sans-serif;
+    font-size:50px;
+    color:Lemon Green;
+    text-align: center;
 
-    @media (min-width: 800px) and (max-width: 850px) {
-            .navbar:not(.top-nav-collapse) {
-                background: #1C2331!important;
-            }
-        }
+    padding-bottom: 5px;
+    margin-bottom:7px;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
   </style>
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  
+  <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+
+
+//7. juni 2019, 0900
+dateFuture = new Date(2019,5,7,9,0,0);
+
+function GetCount(){
+
+        dateNow = new Date(); //grab current date
+        amount = dateFuture.getTime() - dateNow.getTime(); //calc milliseconds between dates
+        delete dateNow;
+
+        // time is already past
+        if(amount < 0){
+                document.getElementById('countbox').innerHTML="Now!";
+        }
+        // date is still good
+        else{
+                days=0;hours=0;mins=0;secs=0;out="";
+
+                amount = Math.floor(amount/1000);//kill the "milliseconds" so just secs
+
+                days=Math.floor(amount/86400);//days
+                amount=amount%86400;
+
+                hours=Math.floor(amount/3600);//hours
+                amount=amount%3600;
+
+                mins=Math.floor(amount/60);//minutes
+                amount=amount%60;
+
+                secs=Math.floor(amount);//seconds
+				
+				//padding
+				if(secs<10)
+					secs="0"+secs;
+				if(mins<10)
+					mins="0"+mins;
+				if(hours<10)
+					hours="0"+hours;
+
+                if(days != 0){out += days +" day"+((days!=1)?"s":"")+",";}
+                if(days != 0 || hours != 0){out += hours +":";}
+                if(days != 0 || hours != 0 || mins != 0){out += mins +":";}
+                out += secs;
+                document.getElementById('countbox').innerHTML=out;
+				
+				document.title="Twenty Years Compass Security Anniversary in: "+out;
+
+                setTimeout("GetCount()", 1000);
+        }
+}
+
+window.onload=function(){GetCount();}//call when everything has loaded
+
+//-->
+</script>
+
+  
 </head>
 
 <body>
 
-  <!-- Start your project here-->
+<div class="content">
 
-    <!-- Full Page Intro -->
-  <div class="view">
-
-    <video class="video-intro" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline autoplay muted loop>
+    <video class="video-intro" id="myVideo" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline autoplay muted loop>
       <source src="http://51.15.83.88/img/video/Lines-min.mp4" type="video/mp4">
     </video>
 
-    <!-- Mask & flexbox options-->
-    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+  
+		  
 
-      <!-- Content -->
-      <div class="text-center white-text mx-8 wow fadeIn">
-
-        <h1 class="display-4 mb-4">
-          <strong>Twenty Years Compass Security Anniversary</strong>
-        </h1>
+		<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div id="title">Twenty Years <u><a target="_blank" href="https://www.compass-security.com">Compass Security</a></u> Anniversary</div>
+		  
+		  <br>
+		  
+		<div id="countbox"></div>
+		
         <h3 class="display-5 mb-5">
-          <strong>Since 1999</strong>
-        </h2>
+          		  <div id="title">Since 1999</div><br>
+        </h3>
+		</div>
+			</div>
+			
+			<div class="row">
+		<div class="col-md-9 col-sm-7">
+			<h1>Back To The Future</h1>
+			<p>Vor 20 Jahren haben Walter Sprenger und Ivan Bütler die <u><a target="_blank" href="https://www.compass-security.com">Compass Security</a></u> gegründet. Am Freitag 7. Juni 2019 laden wir unsere ehemaligen Mitarbeitenden, aktuellen Mitarbeitenden und Kunden in die <b>Aula der HSR nach Rapperswil</b> ein. Wir wollen einen wunderbaren Tag organisieren, mit ein wenig Rückblick, Gegenwart und Ausblick. Merken Sie sich diesen Termin!<br><h3>Save the Date: 7. Juni 2019 von 09:00 bis 17:00 Uhr.</h3></p>
+		</div>
+		<div class="text-center col-md-3 col-sm-5">
+			<img src="img/compass_logo.png">
+		</div>
+			</div>
+</div>
+</div>
+       
 
-        <!-- Time Counter -->
-        <p id="time-counter" class="border border-light my-4"></p>
-
-
-        <a target="_blank" href="https://www.compass-security.com" class="btn btn-outline-white btn-lg">Compass Security
-          <i class="fa fa-external-link ml-2"></i>
-        </a>
-      </div>
-      <!-- Content -->
-
-    </div>
-    <!-- Mask & flexbox options-->
-
-  </div>
-  <!-- Full Page Intro -->
 
 
   <!-- /Start your project here-->
