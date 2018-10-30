@@ -2,37 +2,85 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Twenty Years Compass Security Anniversary</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
   <style type="text/css">
-   
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
+   * {
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+    padding: 0 15px;
+}
+
+h1 {
+    padding: 0;
+    margin: 20px; 
+    font-size: 40px;
+    text-align: center;
+}
+
+p {
+    margin: 0 0 30px 0;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.fullscreen-bg {
     position: fixed;
+    top: 0;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('img/bg.png') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
 }
    
 		
-	@font-face {
+@font-face {
     font-family:"CursedTimer";
-    src: url("font/CursedTimerULiL.ttf") /* TTF file for CSS3 browsers */
+    src: url("font/CursedTimerULiL.ttf");
 }
 
 #countbox {
     font-family:'CursedTimer', sans-serif;
-    font-size: 100px;
-    color:Lemon Green;
+    font-size: 70px;
+	color: white;
     text-align: center;
 
     padding-bottom: 5px;
@@ -41,30 +89,15 @@
 
 #title {
     font-family:'CursedTimer', sans-serif;
-    font-size:50px;
-    color:Lemon Green;
+    font-size:40px;
     text-align: center;
-
+	color: white;
     padding-bottom: 5px;
     margin-bottom:7px;
 }
 
-/* Add some content at the bottom of the video/page */
-.content {
-    position: fixed;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
-}
   </style>
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
-  
   <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
-<!--
-
 
 //7. juni 2019, 0900
 dateFuture = new Date(2019,5,7,9,0,0);
@@ -104,7 +137,7 @@ function GetCount(){
 				if(hours<10)
 					hours="0"+hours;
 
-                if(days != 0){out += days +" day"+((days!=1)?"s":"")+",";}
+                if(days != 0){out += days +" day"+((days!=1)?"s":"")+"<br>";}
                 if(days != 0 || hours != 0){out += hours +":";}
                 if(days != 0 || hours != 0 || mins != 0){out += mins +":";}
                 out += secs;
@@ -126,46 +159,42 @@ window.onload=function(){GetCount();}//call when everything has loaded
 
 <body>
 
-<div class="content">
+    <div class="fullscreen-bg">
 
-    <video class="video-intro" id="myVideo" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline autoplay muted loop>
+<video class="fullscreen-bg__video" playsinline autoplay muted loop>
       <source src="http://51.15.83.88/img/video/Lines-min.mp4" type="video/mp4">
     </video>
+	</div>
 
-  
-		  
 
-		<div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<div id="title">Twenty Years <u><a target="_blank" href="https://www.compass-security.com">Compass Security</a></u> Anniversary</div>
-		  
-		  <br>
-		  
-		<div id="countbox"></div>
+    <div class="content">
+		<br>
 		
-        <h3 class="display-5 mb-5">
-          		  <div id="title">Since 1999</div><br>
-        </h3>
-		</div>
+		<div id="title">Twenty Years Compass Security Anniversary</div>
+		  
+			<br>
+		  
+			<div id="countbox"></div>
+		
+          	<div id="title">Since 1999</div>
+			
+			<br>
+			
+			<font color="white" face="Source Sans Pro">
+		
+			<h1>Back To The Future</h1><p>
+			Vor 20 Jahren haben Walter Sprenger und Ivan Bütler die Compass Security gegründet. Am Freitag 7. Juni 2019 laden wir unsere ehemaligen Mitarbeitenden, aktuellen Mitarbeitenden und Kunden in die <b>Aula der HSR nach Rapperswil</b> ein. Wir wollen einen wunderbaren Tag organisieren, mit ein wenig Rückblick, Gegenwart und Ausblick. Merken Sie sich diesen Termin!</p>
+									
+			<div align="center">
+			<p><b>
+			Save the Date: 7. Juni 2019, 09:00 bis 17:00 Uhr</b>
+			</p>
 			</div>
 			
-			<div class="row">
-		<div class="col-md-9 col-sm-7">
-			<h1>Back To The Future</h1>
-			<p>Vor 20 Jahren haben Walter Sprenger und Ivan Bütler die <u><a target="_blank" href="https://www.compass-security.com">Compass Security</a></u> gegründet. Am Freitag 7. Juni 2019 laden wir unsere ehemaligen Mitarbeitenden, aktuellen Mitarbeitenden und Kunden in die <b>Aula der HSR nach Rapperswil</b> ein. Wir wollen einen wunderbaren Tag organisieren, mit ein wenig Rückblick, Gegenwart und Ausblick. Merken Sie sich diesen Termin!<br><h3>Save the Date: 7. Juni 2019 von 09:00 bis 17:00 Uhr.</h3></p>
-		</div>
-		<div class="text-center col-md-3 col-sm-5">
-			<img src="img/compass_logo.png">
-		</div>
-			</div>
-</div>
+			</font>
+		 
 </div>
        
-
-
-
-  <!-- /Start your project here-->
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
